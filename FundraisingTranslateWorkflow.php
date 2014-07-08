@@ -12,6 +12,8 @@ $wgExtensionCredits['other'][] = array(
 	'license-name' => 'GPLv2',
 );
 
+$wgMessagesDirs['FundraisingTranslateWorkflow'] = __DIR__ . '/i18n';
+
 $wgAutoloadClasses['FundraisingTranslateWorkflow\FundraisingMessageGroup'] = __DIR__ . '/FundraisingMessageGroup.php';
 
 $wgHooks['TranslatePostInitGroups'][] = 'FundraisingTranslateWorkflow\FundraisingMessageGroup::onTranslatePostInitGroups';
