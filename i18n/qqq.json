@@ -1,8 +1,9 @@
 {
-    "@metadata": {
-        "authors": [
-			"Adam Roses Wight"
+	"@metadata": {
+		"authors": [
+			"Adam Roses Wight",
+			"Beta16"
 		]
-    },
-	"fundraising-translate-workflow-desc": "Extension description"
+	},
+	"fundraising-translate-workflow-desc": "{{desc|name=Fundraising Translate Workflow}}"
 }
