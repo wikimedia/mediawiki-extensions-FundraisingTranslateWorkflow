@@ -4,11 +4,15 @@ namespace FundraisingTranslateWorkflow;
 use \IContextSource;
 use \MessageGroup;
 use \MessageGroupStates;
+use \WikiPageMessageGroup;
 
 /**
  * Wrapper to modify message group behavior
  */
-class FundraisingMessageGroup implements MessageGroup {
+class FundraisingMessageGroup
+	extends WikiPageMessageGroup
+	// TODO: ideally would be "implements MessageGroup"
+{
 	/**
 	 * TranslatePostInitGroups hook handler
 	 *
