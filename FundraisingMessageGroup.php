@@ -79,4 +79,8 @@ class FundraisingMessageGroup
     function getSourceLanguage() { return $this->__call( __FUNCTION__, func_get_args() ); }
     function getTranslatableLanguages() { return $this->__call( __FUNCTION__, func_get_args() ); }
     function getTranslationAids() { return $this->__call( __FUNCTION__, func_get_args() ); }
+
+	// WikiPageMessageGroup functions
+	function getTitle() { return $this->__call( __FUNCTION__, func_get_args() ); }
+	function getInsertablesSuggester() { return $this->__call( __FUNCTION__, func_get_args() ); }
 }
