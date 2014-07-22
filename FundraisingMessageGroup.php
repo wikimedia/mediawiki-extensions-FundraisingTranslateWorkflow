@@ -8,6 +8,8 @@ use \WikiPageMessageGroup;
 
 /**
  * Wrapper to modify message group behavior
+ *
+ * FIXME: all a kludge.  Square peg, jagged hole.
  */
 class FundraisingMessageGroup
 	extends WikiPageMessageGroup
@@ -47,8 +49,12 @@ class FundraisingMessageGroup
 		global $wgFundraisingTranslateWorkflowPublishRight;
 
 		$states = $this->group->getMessageGroupStates()->getStates();
+		$conditions = $this->group->getMessageGroupStates()->getConditions();
 
+		// The whole point of this extension:
 		$states['published']['right'] = $wgFundraisingTranslateWorkflowPublishRight;
+
+		$states[MessageGroupStates::CONDKEY] = $conditions;
 
 		return new MessageGroupStates( $states );
 	}
