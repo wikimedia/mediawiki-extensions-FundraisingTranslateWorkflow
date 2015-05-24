@@ -1,31 +1,13 @@
 <?php
-
-$wgExtensionCredits['other'][] = array(
-	'path' => __FILE__,
-	'name' => 'FundraisingTranslateWorkflow',
-	'author' => array(
-		'Adam Roses Wight',
-	),
-	'version' => '0.1',
-	'url' => 'https://www.mediawiki.org/wiki/Extension:FundraisingTranslateWorkflow',
-	'descriptionmsg' => 'fundraising-translate-workflow-desc',
-	'license-name' => 'GPLv2',
-);
-
-$wgMessagesDirs['FundraisingTranslateWorkflow'] = __DIR__ . '/i18n';
-
-$wgAutoloadClasses['FundraisingTranslateWorkflow\FundraisingMessageGroup'] = __DIR__ . '/FundraisingMessageGroup.php';
-
-$wgHooks['TranslatePostInitGroups'][] = 'FundraisingTranslateWorkflow\FundraisingMessageGroup::onTranslatePostInitGroups';
-
-/**
- * Message group titles matching these regexes will be wrapped by our hideous thing.
- */
-$wgFundraisingTranslateWorkflowPagePatterns = array(
-	'|^page-Fundraising/|',
-);
-
-/**
- * Permission needed to set our message groups to "published".
- */
-$wgFundraisingTranslateWorkflowPublishRight = 'translate-manage';
+if ( function_exists( 'wfLoadExtension' ) ) {
+	wfLoadExtension( 'FundraisingTranslateWorkflow' );
+	// Keep i18n globals so mergeMessageFileList.php doesn't break
+	$wgMessagesDirs['FundraisingTranslateWorkflow'] = __DIR__ . '/i18n';
+	/* wfWarn(
+		'Deprecated PHP entry point used for FundraisingTranslateWorkflow extension. Please use wfLoadExtension instead, ' .
+		'see https://www.mediawiki.org/wiki/Extension_registration for more details.'
+	); */
+	return;
+} else {
+	die( 'This version of the FundraisingTranslateWorkflow extension requires MediaWiki 1.25+' );
+}

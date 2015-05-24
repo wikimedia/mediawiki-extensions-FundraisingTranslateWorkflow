@@ -1,0 +1,31 @@
+{
+	"name": "FundraisingTranslateWorkflow",
+	"version": "0.1",
+	"author": [
+		"Adam Roses Wight"
+	],
+	"url": "https://www.mediawiki.org/wiki/Extension:FundraisingTranslateWorkflow",
+	"descriptionmsg": "fundraising-translate-workflow-desc",
+	"license-name": "GPLv2",
+	"type": "other",
+	"MessagesDirs": {
+		"FundraisingTranslateWorkflow": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"FundraisingTranslateWorkflow\\FundraisingMessageGroup": "FundraisingMessageGroup.php"
+	},
+	"Hooks": {
+		"TranslatePostInitGroups": [
+			"FundraisingTranslateWorkflow\\FundraisingMessageGroup::onTranslatePostInitGroups"
+		]
+	},
+	"config": {
+		"FundraisingTranslateWorkflowPagePatterns": [
+			"|^page-Fundraising/|"
+		],
+		"FundraisingTranslateWorkflowPublishRight": "translate-manage"
+	},
+	"manifest_version": 1
+}
