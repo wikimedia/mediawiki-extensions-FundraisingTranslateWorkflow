@@ -2,7 +2,6 @@
 namespace FundraisingTranslateWorkflow;
 
 use \IContextSource;
-use \MessageGroup;
 use \MessageGroupStates;
 use \WikiPageMessageGroup;
 
