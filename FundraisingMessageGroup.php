@@ -19,7 +19,9 @@ class FundraisingMessageGroup
 	 *
 	 * Wrap translation groups we want to mutate.
 	 *
-	 * @param array $list
+	 * @param array &$groups
+	 * @param array &$deps
+	 * @param array &$autoload
 	 * @return bool
 	 */
 	public static function onTranslatePostInitGroups( &$groups, &$deps, &$autoload ) {
@@ -43,6 +45,7 @@ class FundraisingMessageGroup
 
 	/**
 	 * Modify workflow permissions
+	 * @return MessageGroupStates
 	 */
 	public function getMessageGroupStates() {
 		global $wgFundraisingTranslateWorkflowPublishRight;
@@ -60,6 +63,9 @@ class FundraisingMessageGroup
 
 	/**
 	 * Delegate everything else to the pseudo-parent object
+	 * @param string $method
+	 * @param array $args
+	 * @return mixed
 	 */
 	public function __call( $method, $args ) {
 		return call_user_func_array( [ $this->group, $method ], $args );
