@@ -6,7 +6,7 @@
 	],
 	"url": "https://www.mediawiki.org/wiki/Extension:FundraisingTranslateWorkflow",
 	"descriptionmsg": "fundraising-translate-workflow-desc",
-	"license-name": "GPL-2.0",
+	"license-name": "GPL-2.0-only",
 	"type": "other",
 	"MessagesDirs": {
 		"FundraisingTranslateWorkflow": [
