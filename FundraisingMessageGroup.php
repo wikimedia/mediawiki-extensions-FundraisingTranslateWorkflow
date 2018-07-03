@@ -115,7 +115,7 @@ class FundraisingMessageGroup
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function initCollection( $code ) {
+	function initCollection( $code, $unique = false ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
@@ -131,7 +131,7 @@ class FundraisingMessageGroup
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getMessage( $key, $code ) {
+	function getMessage( $key, $code, $flags = self::READ_LATEST ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
