@@ -2,6 +2,7 @@
 namespace FundraisingTranslateWorkflow;
 
 use \IContextSource;
+use \MessageGroup;
 use \MessageGroupStates;
 use \WikiPageMessageGroup;
 
@@ -14,6 +15,10 @@ class FundraisingMessageGroup
 	extends WikiPageMessageGroup
 	// TODO: ideally would be "implements MessageGroup"
 {
+
+	/** @var MessageGroup */
+	private $group;
+
 	/**
 	 * TranslatePostInitGroups hook handler
 	 *
@@ -39,6 +44,9 @@ class FundraisingMessageGroup
 		return true;
 	}
 
+	/**
+	 * @param MessageGroup $group
+	 */
 	public function __construct( $group ) {
 		$this->group = $group;
 	}
