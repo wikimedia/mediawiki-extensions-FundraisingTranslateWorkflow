@@ -79,87 +79,87 @@ class FundraisingMessageGroup
 		return call_user_func_array( [ $this->group, $method ], $args );
 	}
 
-	function getConfiguration() {
+	public function getConfiguration() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getId() {
+	public function getId() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getLabel( IContextSource $context = null ) {
+	public function getLabel( IContextSource $context = null ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getDescription( IContextSource $context = null ) {
+	public function getDescription( IContextSource $context = null ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getIcon() {
+	public function getIcon() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getNamespace() {
+	public function getNamespace() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function isMeta() {
+	public function isMeta() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function exists() {
+	public function exists() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getFFS() {
+	public function getFFS() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getChecker() {
+	public function getChecker() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getMangler() {
+	public function getMangler() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function initCollection( $code, $unique = false ) {
+	public function initCollection( $code, $unique = false ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function load( $code ) {
+	public function load( $code ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getDefinitions() {
+	public function getDefinitions() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getTags( $type = null ) {
+	public function getTags( $type = null ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getMessage( $key, $code, $flags = self::READ_LATEST ) {
+	public function getMessage( $key, $code, $flags = self::READ_LATEST ) {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getSourceLanguage() {
+	public function getSourceLanguage() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getTranslatableLanguages() {
+	public function getTranslatableLanguages() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getTranslationAids() {
+	public function getTranslationAids() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getTitle() {
+	public function getTitle() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 
-	function getInsertablesSuggester() {
+	public function getInsertablesSuggester() {
 		return $this->__call( __FUNCTION__, func_get_args() );
 	}
 }
