@@ -1,4 +1,8 @@
 {
+	"name": "mediawiki/fundraising-translate-workflow",
+	"description": "Custom translation permissions for Fundraising pages",
+	"type": "mediawiki-extension",
+	"license": "GPL-2.0-or-later",
 	"require-dev": {
 		"jakub-onderka/php-parallel-lint": "1.0.0",
 		"jakub-onderka/php-console-highlighter": "0.3.2",

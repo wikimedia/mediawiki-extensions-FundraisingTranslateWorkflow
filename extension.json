@@ -1,6 +1,6 @@
 {
 	"name": "FundraisingTranslateWorkflow",
-	"version": "0.1",
+	"version": "0.2",
 	"author": [
 		"Adam Roses Wight"
 	],
@@ -8,24 +8,37 @@
 	"descriptionmsg": "fundraising-translate-workflow-desc",
 	"license-name": "GPL-2.0-only",
 	"type": "other",
+	"requires": {
+		"extensions": {
+			"Translate": "*"
+		}
+	},
 	"MessagesDirs": {
 		"FundraisingTranslateWorkflow": [
 			"i18n"
 		]
 	},
-	"AutoloadClasses": {
-		"FundraisingTranslateWorkflow\\FundraisingMessageGroup": "FundraisingMessageGroup.php"
+	"AutoloadNamespaces": {
+		"FundraisingTranslateWorkflow\\": "includes/"
 	},
 	"Hooks": {
-		"TranslatePostInitGroups": [
-			"FundraisingTranslateWorkflow\\FundraisingMessageGroup::onTranslatePostInitGroups"
+		"Translate:modifyMessageGroupStates": [
+			"FundraisingTranslateWorkflow\\TranslateHooks::onModifyMessageGroupStates"
 		]
 	},
 	"config": {
-		"FundraisingTranslateWorkflowPagePatterns": [
-			"|^page-Fundraising/|"
-		],
-		"FundraisingTranslateWorkflowPublishRight": "translate-manage"
+		"FundraisingTranslateWorkflowPagePatterns": {
+			"value": [
+				"|^page-Fundraising/|"
+			],
+			"description": "List of regexes to match against message group IDs.",
+			"public": true
+		},
+		"FundraisingTranslateWorkflowPublishRight": {
+			"value": "translate-manage",
+			"description": "Additional group right to add to the \"published\" workflow state.",
+			"public": true
+		}
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
