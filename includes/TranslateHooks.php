@@ -24,4 +24,15 @@ class TranslateHooks {
 		}
 	}
 
+	public static function onRegistration() {
+		if ( !class_exists( \TranslateUtils::class ) ) {
+			// HACK: Declaring a depency on Translate in extension.json requires Translate to have
+			// its own extension.json, which is coming but not yet there.
+			throw new \ExtensionDependencyError( [ [
+				'msg' => 'FundraisingTranslateWorkflow requires Translate to be installed.',
+				'type' => 'missing-phpExtension',
+				'missing' => 'Translate',
+			] ] );
+		}
+	}
 }
