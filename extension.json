@@ -8,6 +8,9 @@
 	"descriptionmsg": "fundraising-translate-workflow-desc",
 	"license-name": "GPL-2.0-only",
 	"type": "other",
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
 	"MessagesDirs": {
 		"FundraisingTranslateWorkflow": [
 			"i18n"
