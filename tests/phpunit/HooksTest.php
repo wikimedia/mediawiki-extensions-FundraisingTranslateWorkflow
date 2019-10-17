@@ -17,7 +17,7 @@ class HooksTest extends ApiTestCase {
 	const NORMAL_MESSAGE_GROUP = 'testgroup';
 	const FUNDRAISING_MESSAGE_GROUP = 'page-Fundraising/Foo';
 
-	public function setUp() {
+	public function setUp() : void {
 		global $wgFundraisingTranslateWorkflowPublishRight;
 
 		parent::setUp();
