@@ -3,6 +3,7 @@
 namespace FundraisingTranslateWorkflow\Tests;
 
 use ApiTestCase;
+use ApiUsageException;
 use ExtensionRegistry;
 use WikiMessageGroup;
 
@@ -14,8 +15,8 @@ use WikiMessageGroup;
  */
 class HooksTest extends ApiTestCase {
 
-	const NORMAL_MESSAGE_GROUP = 'testgroup';
-	const FUNDRAISING_MESSAGE_GROUP = 'page-Fundraising/Foo';
+	private const NORMAL_MESSAGE_GROUP = 'testgroup';
+	private const FUNDRAISING_MESSAGE_GROUP = 'page-Fundraising/Foo';
 
 	public function setUp() : void {
 		global $wgFundraisingTranslateWorkflowPublishRight;
@@ -76,12 +77,11 @@ class HooksTest extends ApiTestCase {
 	/**
 	 * Users without the right can't publish fundraising messages.
 	 *
-	 * @expectedException ApiUsageException
-	 * @expectedExceptionMessage You don't have permission to manage message groups.
-	 *
 	 * @covers ::onModifyMessageGroupStates
 	 */
 	public function testOnModifyMessageGroupStates_matchDeny() {
+		$this->expectException( ApiUsageException::class );
+		$this->expectExceptionMessage( 'You don\'t have permission to manage message groups.' );
 		list( $result ) = $this->doApiRequestWithToken( [
 			'action' => 'groupreview',
 			'group' => self::FUNDRAISING_MESSAGE_GROUP,
