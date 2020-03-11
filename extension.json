@@ -23,9 +23,7 @@
 		"FundraisingTranslateWorkflow\\": "includes/"
 	},
 	"Hooks": {
-		"Translate:modifyMessageGroupStates": [
-			"FundraisingTranslateWorkflow\\TranslateHooks::onModifyMessageGroupStates"
-		]
+		"Translate:modifyMessageGroupStates": "FundraisingTranslateWorkflow\\TranslateHooks::onModifyMessageGroupStates"
 	},
 	"config": {
 		"FundraisingTranslateWorkflowPagePatterns": {
