@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"BaRaN6161 TURK"
+			"BaRaN6161 TURK",
+			"MuratTheTurkish"
 		]
 	},
-	"fundraising-translate-workflow-desc": "Kludge, Fon Oluşturma/Tercüme kapsamında sayfa çevirileri için özel iş akışları sağlama"
+	"fundraising-translate-workflow-desc": "Kludge, Kaynak Yaratma/Çeviri altında sayfa çevirileri için özel iş akışları sağlar"
 }
