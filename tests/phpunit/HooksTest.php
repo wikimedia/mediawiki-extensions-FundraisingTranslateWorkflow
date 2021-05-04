@@ -40,7 +40,7 @@ class HooksTest extends ApiTestCase {
 		// Populate message group fixtures.
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
-			function ( &$groups, &$deps, &$autoload ) {
+			static function ( &$groups, &$deps, &$autoload ) {
 				$normalGroup = new WikiMessageGroup( self::NORMAL_MESSAGE_GROUP, 'wewgweg' );
 				$frGroup = new WikiMessageGroup( self::FUNDRAISING_MESSAGE_GROUP, 'wewgweg' );
 				$groups[self::NORMAL_MESSAGE_GROUP] = $normalGroup;
