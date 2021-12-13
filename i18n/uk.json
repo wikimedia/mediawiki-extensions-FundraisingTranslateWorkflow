@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Andriykopanytsia"
+			"Andriykopanytsia",
+			"DDPAT"
 		]
 	},
-	"fundraising-translate-workflow-desc": "Ляп, щоб забезпечити настроювані робочі процеси для перекладів сторінки розділу „Збір коштів/Переклад“"
+	"fundraising-translate-workflow-desc": "Ляп, щоб забезпечити налаштовані робочі процеси для перекладів сторінки розділу \"Збір коштів/Переклад\""
 }
