@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
-			"Gomoko"
+			"Gomoko",
+			"Verdy p"
 		]
 	},
-	"fundraising-translate-workflow-desc": "Bidouille pour fournir des flux de travail personnalisés pour les traductions de page sous Collecte de fonds/Traduction"
+	"fundraising-translate-workflow-desc": "Bricolage qui permet de fournir des flux de travail personnalisés pour les traductions de page sous Collecte de fonds/Traduction"
 }
