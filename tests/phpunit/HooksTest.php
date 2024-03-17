@@ -60,7 +60,7 @@ class HooksTest extends ApiTestCase {
 	 * @covers ::onModifyMessageGroupStates
 	 */
 	public function testOnModifyMessageGroupStates_nonMatch() {
-		list( $result ) = $this->doApiRequestWithToken( [
+		[ $result ] = $this->doApiRequestWithToken( [
 			'action' => 'groupreview',
 			'group' => self::NORMAL_MESSAGE_GROUP,
 			'language' => 'es',
@@ -82,7 +82,7 @@ class HooksTest extends ApiTestCase {
 	public function testOnModifyMessageGroupStates_matchDeny() {
 		$this->expectException( ApiUsageException::class );
 		$this->expectExceptionMessage( 'You don\'t have permission to manage message groups.' );
-		list( $result ) = $this->doApiRequestWithToken( [
+		[ $result ] = $this->doApiRequestWithToken( [
 			'action' => 'groupreview',
 			'group' => self::FUNDRAISING_MESSAGE_GROUP,
 			'language' => 'es',
@@ -99,7 +99,7 @@ class HooksTest extends ApiTestCase {
 		global $wgFundraisingTranslateWorkflowPublishRight;
 		$this->setGroupPermissions( 'user', $wgFundraisingTranslateWorkflowPublishRight, true );
 
-		list( $result ) = $this->doApiRequestWithToken( [
+		[ $result ] = $this->doApiRequestWithToken( [
 			'action' => 'groupreview',
 			'group' => self::FUNDRAISING_MESSAGE_GROUP,
 			'language' => 'es',
