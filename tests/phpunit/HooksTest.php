@@ -34,9 +34,6 @@ class HooksTest extends ApiTestCase {
 			],
 		] );
 
-		// Mark the group review table to be reset for each test.
-		$this->tablesUsed[] = 'translate_groupreviews';
-
 		// Populate message group fixtures.
 		$this->setTemporaryHook(
 			'TranslatePostInitGroups',
