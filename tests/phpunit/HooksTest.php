@@ -2,9 +2,9 @@
 
 namespace FundraisingTranslateWorkflow\Tests;
 
-use ApiTestCase;
 use ApiUsageException;
 use ExtensionRegistry;
+use MediaWiki\Tests\Api\ApiTestCase;
 use WikiMessageGroup;
 
 /**
