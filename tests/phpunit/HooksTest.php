@@ -19,8 +19,6 @@ class HooksTest extends ApiTestCase {
 	private const FUNDRAISING_MESSAGE_GROUP = 'page-Fundraising/Foo';
 
 	public function setUp(): void {
-		global $wgFundraisingTranslateWorkflowPublishRight;
-
 		parent::setUp();
 
 		if ( !ExtensionRegistry::getInstance()->isLoaded( 'Translate' ) ) {
@@ -45,8 +43,9 @@ class HooksTest extends ApiTestCase {
 
 		// Everyone can do normal review.
 		$this->setGroupPermissions( 'user', 'translate-groupreview', true );
+		$publishRight = $this->getConfVar( 'FundraisingTranslateWorkflowPublishRight' );
 		// Nobody can do fundraising review.
-		$this->setGroupPermissions( 'user', $wgFundraisingTranslateWorkflowPublishRight, false );
+		$this->setGroupPermissions( 'user', $publishRight, false );
 	}
 
 	/**
@@ -91,8 +90,8 @@ class HooksTest extends ApiTestCase {
 	 * @covers ::onModifyMessageGroupStates
 	 */
 	public function testOnModifyMessageGroupStates_matchAllow() {
-		global $wgFundraisingTranslateWorkflowPublishRight;
-		$this->setGroupPermissions( 'user', $wgFundraisingTranslateWorkflowPublishRight, true );
+		$publishRight = $this->getConfVar( 'FundraisingTranslateWorkflowPublishRight' );
+		$this->setGroupPermissions( 'user', $publishRight, true );
 
 		[ $result ] = $this->doApiRequestWithToken( [
 			'action' => 'groupreview',
