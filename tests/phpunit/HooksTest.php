@@ -27,11 +27,9 @@ class HooksTest extends ApiTestCase {
 			$this->markTestSkipped( 'Can only run test with Extension:Translate enabled' );
 		}
 
-		$this->setMwGlobals( [
-			'wgTranslateWorkflowStates' => [
-				'progress' => [ 'color' => 'd33' ],
-				'published' => [ 'color' => 'aea' ],
-			],
+		$this->overrideConfigValue( 'TranslateWorkflowStates', [
+			'progress' => [ 'color' => 'd33' ],
+			'published' => [ 'color' => 'aea' ],
 		] );
 
 		// Populate message group fixtures.
